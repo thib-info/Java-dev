@@ -7,16 +7,4 @@
     <artifactId>pom-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  
-  <build>
-  	  <plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<release>15</release>
-				</configuration>
-			</plugin>
-		</plugins>
-  </build>
 </project>
