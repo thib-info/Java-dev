@@ -19,9 +19,10 @@ public class DaoSession extends DaoModel implements Session {
         return this.date;
     }
 
-    @Override
-    public void setStatus(int status){
+
+    private void setStatus(int status){
         this.status = status;
+        if (this.status >= 0) this.commentary = null;
     }
 
     @Override
@@ -31,7 +32,16 @@ public class DaoSession extends DaoModel implements Session {
 
     @Override
     public void setFailed(long id){
+    	
+    	if (id < 0) {
+    		this.setStatus(1);
+    	}
+    	else {
+    		this.setStatus(-1);
+    	}
+    	
         this.failed = id;
+    	
     }
 
     @Override
@@ -41,7 +51,7 @@ public class DaoSession extends DaoModel implements Session {
 
     @Override
     public void setCommentary(String commentary){
-        this.commentary = commentary;
+    	if (this.getStatus() < 0) this.commentary = commentary;
     }
 
     @Override
