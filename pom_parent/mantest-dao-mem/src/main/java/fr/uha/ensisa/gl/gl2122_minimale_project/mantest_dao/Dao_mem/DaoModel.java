@@ -6,6 +6,10 @@ public class DaoModel implements Model {
 	private long id;
     private String title;
     private String description;
+    
+    public DaoModel() {
+    	
+    }
 
     @Override
     public void setTitle(String title){
