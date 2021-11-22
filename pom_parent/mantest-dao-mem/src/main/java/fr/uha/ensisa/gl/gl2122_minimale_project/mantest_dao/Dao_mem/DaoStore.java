@@ -9,7 +9,11 @@ import java.util.TreeMap;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.Store;
 
 public class DaoStore<T> implements Store<T> {
-    private final Map<Long, T> store = Collections.synchronizedMap(new TreeMap<Long, T>());
+    private final Map<Long, T> store;
+    
+    public DaoStore() {
+    	this.store = Collections.synchronizedMap(new TreeMap<Long, T>());
+    }
 
     @Override
     public void save(long id, T obj) {

@@ -11,6 +11,11 @@ public class DaoTest extends DaoModel implements Test {
 	private DaoStore<Session> sessions;
     private DaoStore<Step> steps;
 	
+    
+    public DaoTest() {
+    	this.sessions = new DaoStore<Session>();
+    	this.steps = new DaoStore<Step>();
+    }
 	@Override
 	public void addSession(Session session) {
 		// TODO Auto-generated method stub
