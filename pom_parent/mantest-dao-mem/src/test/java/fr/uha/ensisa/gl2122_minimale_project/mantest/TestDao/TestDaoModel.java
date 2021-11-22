@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.DaoModel;
 
 public class TestDaoModel {
-
+/*
 	private DaoModel sut;
 	
 	@BeforeEach
@@ -36,5 +36,5 @@ public class TestDaoModel {
 		assertEquals(id, this.sut.getId());
 	}
 	
-	
+	*/
 }

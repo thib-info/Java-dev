@@ -13,7 +13,7 @@
 	<modules>
 		<module>mantest-model</module>
 		<module>mantest-dao-mem</module>
-		<module>mantest-app/spring-mvc-archetype</module>
+		<module>mantest-app/mantest-app</module>
 	</modules>
 
 	<dependencies>
