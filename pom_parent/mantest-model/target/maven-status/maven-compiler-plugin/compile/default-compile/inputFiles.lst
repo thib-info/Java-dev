@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Test.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Model.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Session.java
@@ -6,3 +7,12 @@
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Store.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/System.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Step.java
+=======
+/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Step.java
+/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/StoreFactory.java
+/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Model.java
+/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Session.java
+/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Test.java
+/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/Store.java
+/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/System.java
+>>>>>>> ce666959f2cb86f3fc52c5ff78817d232a956c84
