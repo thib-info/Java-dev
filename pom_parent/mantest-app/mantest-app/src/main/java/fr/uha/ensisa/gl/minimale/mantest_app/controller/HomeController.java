@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-	@RequestMapping(value="/hello")
+	@RequestMapping(value="/minimale")
 	public ModelAndView hello(@RequestParam(required=false, defaultValue="World") String name) {
 		ModelAndView ret = new ModelAndView("home");
 		// Adds an objet to be used in home.jsp

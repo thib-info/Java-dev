@@ -8,7 +8,7 @@
   </parent>
   
   <artifactId>mantest-dao-mem</artifactId>
-  <name>interface_model</name>
+  <name>mantest-dao-mem</name>
   
   <dependencies>
 	<dependency>

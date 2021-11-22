@@ -6,5 +6,5 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>mantest-model</artifactId>
-  <name>template_model</name>
+  <name>mantest-model</name>
 </project>
