@@ -1,5 +1,5 @@
 package fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao;
 
-public interface Step extends Model {
+public interface StepDao extends Model {
 
 }

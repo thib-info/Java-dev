@@ -6,12 +6,12 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
-import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.Store;
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.StoreDao;
 
-public class DaoStore<T> implements Store<T> {
+public class StoreDaoMem<T> implements StoreDao<T> {
     private final Map<Long, T> store;
     
-    public DaoStore() {
+    public StoreDaoMem() {
     	this.store = Collections.synchronizedMap(new TreeMap<Long, T>());
     }
 

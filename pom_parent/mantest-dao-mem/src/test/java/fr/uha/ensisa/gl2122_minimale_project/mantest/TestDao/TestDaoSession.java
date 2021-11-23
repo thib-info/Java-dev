@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.DaoSession;
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.SessionDaoMem;
 
 
 

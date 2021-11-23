@@ -1,14 +1,14 @@
 package fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem;
 
-import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.Session;
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.SessionDao;
 
-public class DaoSession extends DaoModel implements Session {
+public class SessionDaoMem extends ModelDaoMem implements SessionDao {
 	private String date;
     private int status;
     private long failed;
     private String commentary;
 
-    public DaoSession() {
+    public SessionDaoMem() {
         this.date = "now";
         this.status = 0;
         this.failed = -1;

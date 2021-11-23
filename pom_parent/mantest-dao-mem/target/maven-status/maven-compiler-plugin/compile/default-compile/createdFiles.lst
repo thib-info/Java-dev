@@ -1,5 +1,6 @@
-fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/DaoSystem.class
-fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/DaoSession.class
-fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/DaoTest.class
-fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/DaoModel.class
-fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/DaoStore.class
+fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/SessionDaoMem.class
+fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/TestDaoMem.class
+fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/SystemDaoMem.class
+fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/ModelDaoMem.class
+fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/StoreDaoMem.class
+fr/uha/ensisa/gl/gl2122_minimale_project/mantest_dao/Dao_mem/DaoFactoryMem.class

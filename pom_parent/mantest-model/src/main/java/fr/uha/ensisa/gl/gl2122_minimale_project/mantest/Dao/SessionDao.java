@@ -1,6 +1,6 @@
 package fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao;
 
-public interface Session extends Model {
+public interface SessionDao extends Model {
  	public String getDate();
     public int getStatus();
     public void setFailed(long id);

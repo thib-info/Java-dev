@@ -1,13 +1,13 @@
 package fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem;
 
-import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.Model	;
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.ModelDao;
 
-public class DaoModel implements Model {
+public class ModelDaoMem implements ModelDao {
 	private long id;
     private String title;
     private String description;
     
-    public DaoModel() {
+    public ModelDaoMem() {
     	
     }
 

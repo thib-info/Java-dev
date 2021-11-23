@@ -1,7 +1,7 @@
 package fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao;
 
 
-public interface Model {
+public interface ModelDao {
 
     public void setTitle(String title);
     public void setDescription(String description);
