@@ -22,7 +22,8 @@ class SystemDaoTest {
 	@Test
 	public void defaultImplementation() {
 		String defaultTitle = "DefaultSystem";
-		String defaultDescription = "Only implement a default System";
+		String defaultDescription = "Only implement a default "
+				+ "System";
 		long defaultID = 0;
 		assertEquals(defaultTitle, this.sut.getTitle());
 		assertEquals(defaultDescription, this.sut.getDescription());
