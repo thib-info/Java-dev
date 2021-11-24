@@ -1,6 +1,6 @@
 package fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao;
 
-public interface TestDao extends Model {
+public interface TestDao extends ModelDao {
     public void addSession(SessionDao session);
     public void addStep(StepDao step);
     

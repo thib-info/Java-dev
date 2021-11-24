@@ -1,10 +1,5 @@
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/SessionDao.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/StepDao.java
-/Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/StoreFactoryDao.java
-/Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/SessionFactory.java
-/Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/TestFactory.java
-/Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/SystemFactory.java
-/Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/StepFactory.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/DaoFactory.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/SystemDao.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-model/src/main/java/fr/uha/ensisa/gl/gl2122_minimale_project/mantest/Dao/StoreDao.java
