@@ -6,15 +6,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.ModelDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.ModelDaoMem;
 
-public class TestDaoModel {
-/*
-	private DaoModel sut;
+class ModelDaoTest {
+
+	private ModelDao sut;
 	
 	@BeforeEach
 	private void createModel() {
-		this.sut = new DaoModel();
+		this.sut = new ModelDaoMem();
 	}
 	
 	@Test
@@ -24,17 +25,18 @@ public class TestDaoModel {
 		assertEquals(title, this.sut.getTitle());
 	}
 	
-	@Test void testDescription() {
+	@Test 
+	public void testDescription() {
 		String descrip = "test";
 		this.sut.setDescription(descrip);
 		assertEquals(descrip, this.sut.getDescription());
 	}
 	
-	@Test void testId() {
+	@Test 
+	public void testId() {
 		long id = 5;
 		this.sut.setId(id);
 		assertEquals(id, this.sut.getId());
 	}
 	
-	*/
 }
