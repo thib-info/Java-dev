@@ -16,12 +16,20 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.DaoFactory;
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.DaoFactoryMem;
+
 @Configuration
 @ComponentScan(basePackages="fr.uha.ensisa.gl.minimale.mantest_app")
 @EnableWebMvc
 public class MvcConfiguration implements WebMvcConfigurer {
 	@Autowired
 	private ApplicationContext applicationContext;
+	
+	@Bean
+	public DaoFactory getDaoFactory() {
+		return new DaoFactoryMem();
+	}
 
 	@Bean
     public ViewResolver viewResolver() {

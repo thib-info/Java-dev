@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head th:include="../fragments/template :: head(~{::title})">
+    	<title>System Presenation</title>
+	</head>
+	<body>
+		<h1>System Presentation Page</h1>
+		<p>System Name: [[${title}]]</p>
+		<p>System Description: [[${description}]]</p>
+		<p>System Id: [[${id}]]</p>
+		<div th:replace="../fragments/template :: footer"></div>
+	</body>
+</html>
