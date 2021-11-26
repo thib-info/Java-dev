@@ -3,12 +3,12 @@ package fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.ModelDao;
 
 public class ModelDaoMem implements ModelDao {
-	private long id;
+    private long id;
     private String title;
     private String description;
     
     public ModelDaoMem() {
-    	
+        
     }
 
     @Override
@@ -33,11 +33,11 @@ public class ModelDaoMem implements ModelDao {
     
     @Override
     public long getId() {
-    	return this.id;
+        return this.id;
     }
     
     @Override
     public void setId(long id) {
-    	this.id = id;
+        this.id = id;
     }
 }

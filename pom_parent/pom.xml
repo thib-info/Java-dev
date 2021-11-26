@@ -7,13 +7,16 @@
   
   
 	<properties>
+		<java.version>1.8</java.version>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<skip.tests>false</skip.tests>
 	</properties>
 	
 	<modules>
 		<module>mantest-model</module>
 		<module>mantest-dao-mem</module>
-		<module>mantest-app/mantest-app</module>
+		<module>mantest-app</module>
 	</modules>
 
 	<dependencies>
@@ -32,9 +35,6 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.1</version>
-					<configuration>
-						<release>15</release>
-					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
