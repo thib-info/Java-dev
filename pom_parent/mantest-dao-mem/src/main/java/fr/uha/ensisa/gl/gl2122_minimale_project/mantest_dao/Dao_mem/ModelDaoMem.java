@@ -7,9 +7,6 @@ public class ModelDaoMem implements ModelDao {
     private String title;
     private String description;
     
-    public ModelDaoMem() {
-        
-    }
 
     @Override
     public void setTitle(String title){

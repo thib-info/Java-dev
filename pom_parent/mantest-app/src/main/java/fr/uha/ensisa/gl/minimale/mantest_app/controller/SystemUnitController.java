@@ -23,6 +23,8 @@ public class SystemUnitController {
 		ret.addObject("description", sus.getDescription());
 		ret.addObject("id", sus.getId());
 		
+		ret.addObject("nbrTest", sus.getStoreTest().count());
+		
 		return ret;
 	}
 }
