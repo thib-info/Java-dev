@@ -13,10 +13,9 @@
 					<p><span class="caracteristic-sys">System Name:</span> [[${title}]]</p>
 					<p><span class="caracteristic-sys">System Description:</span> [[${description}]]</p>
 					<p id="id-systeme"><span class="caracteristic-sys">System Id:</span> [[${id}]]</p>
-					<div th:replace="../fragments/template :: footer"></div>
 				</div>
 				<div id="system-image-container">
-					<img class="system-image" src="../../ressources/medias/robotic-arm.jpg">
+					<img class="system-image" src="../resources/medias/robotic-arm.jpg" th:src="@{/resources/medias/robotic-arm.jpg}">
 				</div>
 			</div>
 
