@@ -21,7 +21,7 @@ public class HomeController {
 		// Adds an objet to be used in home.jsp
 		ret.addObject("name", name);
 		
-		SystemDao sus = this.factory.getSystem();
+		SystemDao sus = this.factory.getSystemsStore().getStore().get(0);
 		ret.addObject("title", sus.getTitle());
 		
 		return ret;

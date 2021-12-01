@@ -32,7 +32,10 @@ public class StoreDaoMem<T> implements StoreDao<T> {
 	public int count() {
 		return this.store.size();
 	}
-
 	
+	@Override
+	public List<T> getStore(){
+		return this.store;
+	}
 	
 }

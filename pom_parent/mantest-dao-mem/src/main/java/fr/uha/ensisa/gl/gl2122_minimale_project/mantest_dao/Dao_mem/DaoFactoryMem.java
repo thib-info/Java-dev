@@ -7,23 +7,34 @@ import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.SystemDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao;
 
 public class DaoFactoryMem implements DaoFactory {
+	
+	private StoreDao<SystemDao> systemStore;
+	
+	public DaoFactoryMem() {
+		this.systemStore = new StoreDaoMem<SystemDao>(); 
+	}
     
     public ModelDao getModel() {
         ModelDao model = new ModelDaoMem();
         return model;
     }
     
-    public SystemDao getSystem() {
+    public StoreDao<SystemDao> getSystemsStore(){
+    	if(this.systemStore.count() == 0)
+    		initSystem();
+    		
+    	return this.systemStore;
+    }
+    
+    public void initSystem() {
         String title = "BRAS ROBOTIQUE";
         String description = "Un bras permetant de se mouvoir dans l'espace";
-        long id = 1;
+        long id = 0;
         
         SystemDao sut = new SystemDaoMem(title, description, id);
         this.initTest(sut);
         
-        
-        
-        return sut;
+        this.systemStore.save(sut);
     }
 
 	@Override

@@ -18,12 +18,13 @@ public class SystemUnitController {
 	public ModelAndView systemUnitPresentation() {
 		ModelAndView ret = new ModelAndView("systemUnitPresentation");
 		
-		SystemDao sus = this.factory.getSystem();
+		SystemDao sus = this.factory.getSystemsStore().getStore().get(0);
 		ret.addObject("title", sus.getTitle());
 		ret.addObject("description", sus.getDescription());
 		ret.addObject("id", sus.getId());
 		
 		ret.addObject("nbrTest", sus.getStoreTest().count());
+		ret.addObject("storeTest", sus.getStoreTest().getStore());
 		
 		return ret;
 	}
