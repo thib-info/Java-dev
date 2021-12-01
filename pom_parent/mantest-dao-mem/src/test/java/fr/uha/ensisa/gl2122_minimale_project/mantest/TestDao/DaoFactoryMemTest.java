@@ -36,5 +36,11 @@ class DaoFactoryMemTest {
 	        assertEquals(sut.getDescription(), sutTest.getDescription());
 	        assertEquals(sut.getId(), sutTest.getId());
 	    }
+	    
+	    @Test
+	    void getSystemStore() {
+	    	DaoFactory factory2 = new DaoFactoryMem();
+	    	assertEquals(this.factory.getSystemsStore().count(), factory2.getSystemsStore().count());
+	    }
 
 	}

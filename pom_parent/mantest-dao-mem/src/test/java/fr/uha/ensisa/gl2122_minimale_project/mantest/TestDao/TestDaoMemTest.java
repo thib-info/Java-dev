@@ -39,9 +39,10 @@ class TestDaoMemTest {
 		assertEquals(this.test.getId(), id);
 	}
 	
-	/*@Test
+	@Test
 	void getResultTest() {
-		assertEquals(this.test.getResult().getClass(), new TestResultDaoMem().getClass());
-	}*/
+		TestDao newTest = new TestDaoMem("jump", "move from the floor", 10);
+		assertEquals(newTest.getResult().getClass(), new TestResultDaoMem().getClass());
+	}
 
 }

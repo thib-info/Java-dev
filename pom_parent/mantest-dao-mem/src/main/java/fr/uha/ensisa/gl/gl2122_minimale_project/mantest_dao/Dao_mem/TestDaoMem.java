@@ -14,15 +14,13 @@ public class TestDaoMem implements TestDao {
 		this.name = "default";
 		this.description = "default";
 		this.id = 0;
-		
-		//this.result = new TestResultDaoMem();
 	}
 	
 	public TestDaoMem(String name, String description, long id) {
 		this.name = name;
 		this.description = description;
 		this.id = id;
-		
+	
 		this.result = new TestResultDaoMem();
 	}
 
