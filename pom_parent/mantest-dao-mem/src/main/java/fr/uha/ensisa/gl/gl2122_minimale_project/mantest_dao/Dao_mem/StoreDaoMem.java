@@ -25,7 +25,12 @@ public class StoreDaoMem<T> implements StoreDao<T> {
 	@Override
 	public T find(T obj) {
 		// TODO Auto-generated method stub
-		return null;
+		int index = this.store.indexOf(obj);
+		
+		if(index >= 0)
+			return this.store.get(index);
+		else
+			return null;
 	}
 
 	@Override
