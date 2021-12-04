@@ -15,7 +15,7 @@ function listenerDelete(){
 }
 
 function deleteTest(sender){
-  var idTestToDelete = sender.parentElement.children[0].innerText;
+  var idTestToDelete = sender.parentElement.parentElement.children[0].innerText;
   var idS = document.getElementById('id-systeme').innerText.split(': ')[1];
   var valueToSend = "idSystem=" + idS + "&idTest=" + idTestToDelete;
   ajaxSend(valueToSend, './removeTest', 1);
