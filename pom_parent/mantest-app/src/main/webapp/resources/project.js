@@ -1,6 +1,7 @@
 // Project JS here
 window.onload = function(){
 	listenerRapport();
+  listenerNewTest();
 }
 
 function listenerNewTest(){
