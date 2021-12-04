@@ -75,6 +75,7 @@ td {
 	font-style: italic;
 	font-weight: bold;
 	font-variant-caps: small-caps;
+	cursor: pointer;
 }
 
 #container-new-test{

@@ -15,7 +15,9 @@ function ajaxSend(valueToSend, target, goal){
 function reactAjax(index, response){
     switch(index){
         case 0: // Add new test
-            console.log(response);
+            reloadPage();
+            break;
+        case 1: // Remove test
             reloadPage();
             break;
         default:

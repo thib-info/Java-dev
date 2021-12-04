@@ -2,6 +2,23 @@
 window.onload = function(){
 	listenerRapport();
   listenerNewTest();
+  listenerDelete();
+}
+
+function listenerDelete(){
+  var cross = document.getElementsByClassName('delete-test');
+  for(var i=0; i<cross.length; i++){
+    cross[i].addEventListener('click', function(event){
+      deleteTest(event.target);
+    });
+  }
+}
+
+function deleteTest(sender){
+  var idTestToDelete = sender.parentElement.children[0].innerText;
+  var idS = document.getElementById('id-systeme').innerText.split(': ')[1];
+  var valueToSend = "idSystem=" + idS + "&idTest=" + idTestToDelete;
+  ajaxSend(valueToSend, './removeTest', 1);
 }
 
 function listenerNewTest(){
