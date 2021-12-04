@@ -44,6 +44,15 @@
 					</tr>
 				</tfoot>
 				</table>
+				<button id="addNewTest"> Ajouter un nouveaux Test au système </button>
+			</div>
+			<div id="container-new-test" style="display: none;">
+				<label>Nom du test: </label><input type="text" class="input-new-test" name="test-name" placeholder="Entrez votre nom">
+				<label>Description du test: </label><input type="text" name="test-description" placeholder="Entrez votre description">
+				<div class="container-button-add">
+					<button id="confirm-new-test">Confirmer</button>
+					<button id="cancel-new-test">Annuler</button>
+				</div>
 			</div>
 		</div>
 		<div th:replace="../fragments/template :: footer"></div>
