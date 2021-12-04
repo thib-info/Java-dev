@@ -14,11 +14,11 @@ h1{
 	text-color:  #181D31;
 }
 
-.caracteristic-sys{
+.caracteristic-sys, thead td{
 	font-weight: bold;
 }
 
-#system-description{
+#system-description {
 	text-align: left;
 	width:  50%;
 }
@@ -48,10 +48,34 @@ h1{
 }
 
 .system-image{
-	
+	width: 80%;
 }
 
+#container-test {
+	width:  85%;
+	margin:  2% auto;
+}
 
+table{
+	margin:  3% auto;
+	width:  80%;
+}
+
+tr td {
+	border: 1px black solid;
+}
+
+td {
+	padding:  7px 10px;
+	color:  #678983 ;
+}
+
+.generate-rapport {
+	color:  #CDAC81;
+	font-style: italic;
+	font-weight: bold;
+	font-variant-caps: small-caps;
+}
 
 
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head th:include="../fragments/template :: head(~{::title})">
+    	<title>Rapport Test</title>
+	</head>
+	<body>
+		<div id="card-system">
+			<h1>Rapport de Test</h1>
+
+			<div id="card-caract-image-container">
+				<div id="system-description">
+					<p><span class="caracteristic-sys">Nom du test:</span> [[${test.name}]]</p>
+					<p><span class="caracteristic-sys">Description du test:</span> [[${test.description}]]</p>
+					<p id="id-test"><span class="caracteristic-sys">Id du test:</span> [[${test.id}]]</p>
+					<p id="status_[[${result.status}]]" th:switch="${result.status}">
+						<span th:case="'0'" ><span class="caracteristic-sys">Status du test: </span> Test ignorée ! </span>
+						<span th:case="'1'" ><span class="caracteristic-sys">Status du test: </span> Réussi !</span>
+						<span th:case="'2'" ><span class="caracteristic-sys">Status du test: </span> Échoué ...</span>
+					</p>
+				</div>
+				<div id="system-image-container">
+					<img class="system-image" src="../resources/medias/test.png" th:src="@{/resources/medias/test.png}">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

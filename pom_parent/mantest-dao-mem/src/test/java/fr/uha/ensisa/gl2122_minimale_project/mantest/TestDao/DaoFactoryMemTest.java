@@ -18,6 +18,7 @@ class DaoFactoryMemTest {
 	    @BeforeEach
 	    public void setUp() throws Exception {
 	        this.factory = new DaoFactoryMem();
+	        this.factory.initSystem();
 	    }
 
 	    @Test
@@ -27,13 +28,19 @@ class DaoFactoryMemTest {
 	    
 	    @Test
 	    void getSystemTest() {
-	        SystemDao sut = this.factory.getSystem();
-	        SystemDao sutTest = new SystemDaoMem("BRAS ROBOTIQUE", "Un bras permetant de se mouvoir dans l'espace", 1);
+	        SystemDao sut = this.factory.getSystemsStore().getStore().get(0);
+	        SystemDao sutTest = new SystemDaoMem("BRAS ROBOTIQUE", "Un bras permetant de se mouvoir dans l'espace", 0);
 	        
-	        assertEquals(this.factory.getSystem().getClass(), sutTest.getClass());
+	        assertEquals(this.factory.getSystemsStore().getStore().get(0).getClass(), sutTest.getClass());
 	        assertEquals(sut.getTitle(), sutTest.getTitle());
 	        assertEquals(sut.getDescription(), sutTest.getDescription());
 	        assertEquals(sut.getId(), sutTest.getId());
+	    }
+	    
+	    @Test
+	    void getSystemStore() {
+	    	DaoFactory factory2 = new DaoFactoryMem();
+	    	assertEquals(this.factory.getSystemsStore().count(), factory2.getSystemsStore().count());
 	    }
 
 	}
