@@ -1,6 +1,7 @@
-fr/uha/ensisa/gl/minimale/mantest_app/controller/RapportTestController.class
+fr/uha/ensisa/gl/minimale/mantest_app/controller/TestDetailModificationController.class
 fr/uha/ensisa/gl/minimale/mantest_app/controller/RemoveTestController.class
-fr/uha/ensisa/gl/minimale/mantest_app/controller/HomeController.class
 fr/uha/ensisa/gl/minimale/mantest_app/config/MvcConfiguration.class
+fr/uha/ensisa/gl/minimale/mantest_app/controller/RapportTestController.class
+fr/uha/ensisa/gl/minimale/mantest_app/controller/HomeController.class
 fr/uha/ensisa/gl/minimale/mantest_app/controller/AddTestController.class
 fr/uha/ensisa/gl/minimale/mantest_app/controller/SystemUnitController.class
