@@ -1,6 +1,7 @@
 image: maven:3-jdk-8 # default container image to use for tasks
 # task setting up maven properties
 before_script:
+  - cd pom_parent
   - echo '<settings
           xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -15,7 +16,6 @@ before_script:
              </mirror>
            </mirrors>
          </settings>' > settings.xml
-  - cd pom_parent
 # Various reusable properties
 variables:
   MAVEN_CLI_OPTS: "--batch-mode -s settings.xml -Dmaven.repo.local=libs"
