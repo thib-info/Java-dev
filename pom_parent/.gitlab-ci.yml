@@ -43,4 +43,4 @@ test:
       - "**/target/surefire-reports/*"
     reports:
       junit:
-- "**/target/surefire-reports/TEST-*.xml"
+      - "**/target/surefire-reports/TEST-*.xml"
