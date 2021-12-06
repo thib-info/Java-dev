@@ -15,6 +15,7 @@ before_script:
              </mirror>
            </mirrors>
          </settings>' > settings.xml
+  - cd pom_parent
 # Various reusable properties
 variables:
   MAVEN_CLI_OPTS: "--batch-mode -s settings.xml -Dmaven.repo.local=libs"
@@ -32,12 +33,12 @@ stages:
 compile:
   stage: build
   script: # many commands can appear here (as an array)
-    - cd pom_parent | mvn $MAVEN_CLI_OPTS clean compile
+    - mvn $MAVEN_CLI_OPTS clean compile
 # Task: testing
 test:
   stage: test
   script:
-    - cd pom_parent | mvn $MAVEN_CLI_OPTS test
+    - mvn $MAVEN_CLI_OPTS test
   artifacts: # results of the stage
     paths:
       - "**/target/surefire-reports/*"
