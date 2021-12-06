@@ -32,12 +32,12 @@ stages:
 compile:
   stage: build
   script: # many commands can appear here (as an array)
-    - cd pom_parent mvn $MAVEN_CLI_OPTS clean compile
+    - cd pom_parent | mvn $MAVEN_CLI_OPTS clean compile
 # Task: testing
 test:
   stage: test
   script:
-    - cd pom_parent mvn $MAVEN_CLI_OPTS test
+    - cd pom_parent | mvn $MAVEN_CLI_OPTS test
   artifacts: # results of the stage
     paths:
       - "**/target/surefire-reports/*"
