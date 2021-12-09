@@ -3,6 +3,7 @@ package fr.uha.ensisa.gl.minimale.mantest_app.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.DaoFactory;
@@ -15,10 +16,10 @@ public class SystemUnitController {
 	public DaoFactory factory;
 
 	@RequestMapping(value="/system")
-	public ModelAndView systemUnitPresentation() {
+	public ModelAndView systemUnitPresentation(@RequestParam(required=false, defaultValue="0") int idSys) {
 		ModelAndView ret = new ModelAndView("systemUnitPresentation");
 		
-		SystemDao sus = this.factory.getSystemsStore().getStore().get(0);
+		SystemDao sus = this.factory.getSystemsStore().getStore().get(idSys);
 		ret.addObject("title", sus.getTitle());
 		ret.addObject("description", sus.getDescription());
 		ret.addObject("id", sus.getId());
