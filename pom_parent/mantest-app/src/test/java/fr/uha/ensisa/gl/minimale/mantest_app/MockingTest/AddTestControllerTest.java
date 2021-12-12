@@ -19,8 +19,9 @@ import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.SystemDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao;
 import fr.uha.ensisa.gl.minimale.mantest_app.controller.AddTestController;
 
+
 class AddTestControllerTest {
-	
+
 	@Mock DaoFactory daoFactory;
 	@Mock String titleTest;
 	@Mock SystemDao system;
