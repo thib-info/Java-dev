@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -20,6 +21,7 @@ import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.DaoFactoryMem;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.StoreDaoMem;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.SystemDaoMem;
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.TestDaoMem;
 import fr.uha.ensisa.gl.minimale.mantest_app.controller.SystemUnitController;
 
 class SystemUnitControllerTest {
@@ -28,33 +30,48 @@ class SystemUnitControllerTest {
 	@Mock SystemDao system;
 	@Mock StoreDao<SystemDao> storeSystem;
 	@Mock List<SystemDao> listSystem;
+	@Mock StoreDao<TestDao> storeTest;
+	@Mock List<TestDao> listTest;
 	public SystemUnitController sut;
 	
 	
 	@BeforeEach
 	public void prepareDao() {
-		MockitoAnnotations.initMocks(this);
-		when(system.getTitle()).thenReturn("DefaultSystem");
+		MockitoAnnotations.openMocks(this);
 		when(daoFactory.getSystemsStore()).thenReturn(this.storeSystem);
 		when(daoFactory.getSystemsStore().getStore()).thenReturn(this.listSystem);
 		when(daoFactory.getSystemsStore().getStore().get(0)).thenReturn(this.system);
-		//sut = new SystemUnitController();
-		//sut.factory = this.daoFactory;
+		sut = new SystemUnitController();
+		sut.factory = this.daoFactory;
+	}
+	
+	@BeforeEach
+	public void initSystem() {
+		when(this.system.getTitle()).thenReturn("DefaultSystem");
+		when(this.system.getDescription()).thenReturn("Default description");
+		when(this.system.getId()).thenReturn((long) 0);
+	}
+	
+	@BeforeEach
+	public void initTestList() {
+		when(this.system.getStoreTest()).thenReturn(storeTest);
+		when(this.storeTest.getStore()).thenReturn(listTest);
 	}
 	
 	@Test
-	public void testNameSys() throws IOException {
-		assertEquals(system.getTitle(), "DefaultSystem");
-		assertEquals(daoFactory.getSystemsStore().getStore().get(0).getTitle(), "DefaultSystem");
+	public void sysCaractTest() throws IOException {
+		assertEquals(this.system.getTitle(), "DefaultSystem");
+		assertEquals(system.getDescription(), "Default description");
+		assertEquals(system.getId(), 0);
+		
+		assertEquals(this.system, this.daoFactory.getSystemsStore().getStore().get(0));
 	}
 
-	/*
 	@Test
-	public void printTestsList() throws IOException {
+	public void emptyTestsList() throws IOException {
 		ModelAndView ret = sut.systemUnitPresentation(0);
-		Collection<fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao> tests = (Collection<fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao>) ret.getModelMap().get("tab-tests");
+		List<TestDao> tests = (List<TestDao>) ret.getModelMap().get("storeTest"); 
 		assertNotNull(tests);
-		assertTrue(tests.isEmpty());
+		assertTrue(tests.size() == 0);
 	}
-	*/
 }
