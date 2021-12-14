@@ -37,11 +37,15 @@ compile:
 # Task: testing
 test:
   stage: test
+  services:
+    - selenium/standalone-firefox:3.141.59
   script:
     - mvn $MAVEN_CLI_OPTS test
+    - mvn $MAVEN_CLI_OPTS verify -Dselenium.remote.browser=firefox
   artifacts: # results of the stage
     paths:
       - "**/target/surefire-reports/*"
     reports:
       junit:
       - "**/target/surefire-reports/TEST-*.xml"
+      - "**/target/failsafe-reports/TEST-* .xml"

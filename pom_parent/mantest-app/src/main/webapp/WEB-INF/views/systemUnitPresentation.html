@@ -29,6 +29,7 @@
 							<td>Description</td>
 							<td>Rapport</td>
 							<td>Supprimer</td>
+							<td>Modfier</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -38,11 +39,18 @@
 							<td>[[${test.description}]]</td>
 							<td class="generate-rapport">Generate</td>
 							<td class="delete-test"><img src="../resources/medias/cross.png" th:src="@{/resources/medias/cross.png}" border=5 height=35 width=35></td>
+							<td>
+								<form action="/Test" method="POST" >
+									<input type="hidden" name="idSystem" th:value=${id} />
+									<input type="hidden" name="idTest" th:value=${test.id} />
+									<button type="submit">Modifier</button>
+								</form>
+							</td>
 						</tr>
 					</tbody>
 					<tfoot>
 					<tr>
-						<td colspan="5">Number of tests: [[${nbrTest}]]</td>
+						<td colspan="6">Number of tests: [[${nbrTest}]]</td>
 					</tr>
 				</tfoot>
 				</table>

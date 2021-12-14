@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head th:include="../fragments/template :: head(~{::title})">
+    	<title>Test Modification</title>
+	</head>
+    <body>
+
+        <div id="card-test">
+            <h1> Résumé de test </h1>
+
+            <div id=card-caract-test-container>
+                <p><span class="caracteristic-sys">Applicate on System:</span> [[${syst_title}]]</p>
+
+
+
+                <form action="/Test" method="post">
+                    <div class="form-test">
+                        <label for="titleTest"><span>Test Name:</span></label>
+                        <input type="text" name="titleTest" id="titleTest" th:value="${title}" required />
+                    </div>
+
+                    <div class="form-test">
+                        <label for="descriptionTest"><span>Test Description:</span></label>
+                        <input type="textarea" name="descriptionTest" id="descriptionTest" th:value="${description}" required />
+                    </div>
+                    <input type="hidden" name="idSystem" id ="idSystem" th:value="${idSystem}" />
+                    <input type="hidden" name="idTest" id ="idTest" th:value="${idTest}" />
+                    <button type="submit">Modifier le Test</button>
+
+                </form>
+            </div>
+
+        </div>
+        <div>
+            <p>
+                <a href="/system"> Retour au système</a>
+            </p>
+        </div>
+        <div th:replace="../fragments/template :: footer"></div>
+    </body>
+</html>
