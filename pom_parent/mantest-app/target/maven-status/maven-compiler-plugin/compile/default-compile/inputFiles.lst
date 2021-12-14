@@ -1,15 +1,6 @@
-<<<<<<< HEAD
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/AddTestController.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/RapportTestController.java
+/Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/TestDetailModificationController.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/config/MvcConfiguration.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/RemoveTestController.java
 /Users/thibault/Documents/ENSISA/2A/Génie-logiciel/Projet/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/SystemUnitController.java
-=======
-/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/RemoveTestController.java
-/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/config/MvcConfiguration.java
-/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/HomeController.java
-/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/AddTestController.java
-/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/RapportTestController.java
-/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/TestDetailModificationController.java
-/home/couardcourageux/git/gl2122_minimale_project/pom_parent/mantest-app/src/main/java/fr/uha/ensisa/gl/minimale/mantest_app/controller/SystemUnitController.java
->>>>>>> 65fcff986cc5ce1c053461c29f06998f3a951e16
