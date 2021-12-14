@@ -67,5 +67,16 @@
 
 	</build>
 
+	<reporting>
+		<plugins>
+			<!-- SpotBugs -->
+			<plugin>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>4.2.0</version>
+			</plugin>
+		</plugins>
+	</reporting>
+
 
 </project>
