@@ -38,14 +38,11 @@ compile:
 # Task: testing
 test:
   stage: test
-  coverage: '/Jacoco Coverage:\s+\d+[,\.]?\d+\s+\%/'
   script:
-    - mvn $MAVEN_CLI_OPTS | test jacoco:report jacoco:check
-    - find . -name jacoco.csv -exec cat {} \; | awk -F, '{missed += $10 ; covered += $11} END {print "Jacoco Coverage:",100*covered/(covered+missed),"%"}'
+    - mvn $MAVEN_CLI_OPTS test
   artifacts: # results of the stage
     paths:
       - "**/target/surefire-reports/*"
-      - "**/target/site/jacoco/**"
     reports:
       junit:
         - "**/target/surefire-reports/TEST-*.xml"
@@ -63,7 +60,7 @@ integration-test:
   services:
     - selenium/standalone-firefox:3.141.59
   script:
-    - mvn $MAVEN_CLI_OPTS -Dskipt.tests -Dskip.Static -Dselenium.remote.browser=firefox verify
+    - mvn $MAVEN_CLI_OPTS -Dskipt.tests -Dselenium.remote.browser=firefox verify
   artifacts:
     paths:
       - "**/target/failsage-reports/*"
