@@ -41,19 +41,19 @@ test:
   coverage: '/Jacoco Coverage:\s+\d+[,\.]?\d+\s+\%/'
   script:
     - mvn $MAVEN_CLI_OPTS | -Dskip.static test jacoco:report jacoco:check
-    - find . -name jacoco.csv -exec cat {} \; | awk -F, '{missed += $10 ; covered += $11} END {print "Jacoco Covergae:",100*covered/(covered+missed),"%"}'
+    - find . -name jacoco.csv -exec cat {} \; | awk -F, '{missed += $10 ; covered += $11} END {print "Jacoco Coverage:",100*covered/(covered+missed),"%"}'
   artifacts: # results of the stage
     paths:
       - "**/target/surefire-reports/*"
       - "**/target/site/jacoco/**"
     reports:
       junit:
-      - "**/target/surefire-reports/TEST-*.xml"
+        - "**/target/surefire-reports/TEST-*.xml"
 
 spotbugs:
   stage: test
   script:
-    - mvn $MAVEN_SLI_OPTS spotbugs:check
+    - mvn $MAVEN_CLI_OPTS spotbugs:check
   artifacts:
     paths:
       - "**/target/spotbugsXml.xml"
