@@ -28,7 +28,6 @@ cache:
 stages:
   - build
   - test
-  - integration-test
   
 # Task: Compiling
 compile:
@@ -38,35 +37,15 @@ compile:
 # Task: testing
 test:
   stage: test
-  coverage: '/Jacoco Coverage:\s+\d+[,\.]?\d+\s+\%/'
-  script:
-    - mvn $MAVEN_CLI_OPTS | -Dskip.static test jacoco:report jacoco:check
-    - find . -name jacoco.csv -exec cat {} \; | awk -F, '{missed += $10 ; covered += $11} END {print "Jacoco Covergae:",100*covered/(covered+missed),"%"}'
-  artifacts: # results of the stage
-    paths:
-      - "**/target/surefire-reports/*"
-      - "**/target/site/jacoco/**"
-    reports:
-      junit:
-      - "**/target/surefire-reports/TEST-*.xml"
-
-spotbugs:
-  stage: test
-  script:
-    - mvn $MAVEN_SLI_OPTS spotbugs:check
-  artifacts:
-    paths:
-      - "**/target/spotbugsXml.xml"
-
-integration-test:
-  stage: integration-test
   services:
     - selenium/standalone-firefox:3.141.59
   script:
-    - mvn $MAVEN_CLI_OPTS -Dskipt.tests -Dskip.Static -Dselenium.remote.browser=firefox verify
-  artifacts:
+    - mvn $MAVEN_CLI_OPTS test
+    - mvn $MAVEN_CLI_OPTS verify -Dselenium.remote.browser=firefox
+  artifacts: # results of the stage
     paths:
-      - "**/target/failsage-reports/*"
+      - "**/target/surefire-reports/*"
     reports:
       junit:
-          - "**/target/failsafe-reports/TEST-*.xml"
+      - "**/target/surefire-reports/TEST-*.xml"
+      - "**/target/failsafe-reports/TEST-* .xml"
