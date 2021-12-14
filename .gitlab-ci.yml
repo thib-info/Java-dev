@@ -40,7 +40,7 @@ test:
   stage: test
   coverage: '/Jacoco Coverage:\s+\d+[,\.]?\d+\s+\%/'
   script:
-    - mvn $MAVEN_CLI_OPTS | -Dskip.static test jacoco:report jacoco:check
+    - mvn $MAVEN_CLI_OPTS | test jacoco:report jacoco:check
     - find . -name jacoco.csv -exec cat {} \; | awk -F, '{missed += $10 ; covered += $11} END {print "Jacoco Coverage:",100*covered/(covered+missed),"%"}'
   artifacts: # results of the stage
     paths:
