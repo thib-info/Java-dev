@@ -14,7 +14,8 @@ class SystemIT{
 	}
 	
 	@AfterAll
-	public static void closeConnection() {
+	public static void closeConnection() throws InterruptedException {
+		Thread.sleep(2000);
 		InitConnexion.shutdownWebDriver();
 	}
 
