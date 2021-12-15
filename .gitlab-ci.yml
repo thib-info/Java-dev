@@ -50,7 +50,7 @@ test:
 spotbugs:
   stage: test
   script:
-    - mvn $MAVEN_CLI_OPTS spotbugs:check
+    - mvn $MAVEN_CLI_OPTS verify spotbugs:check
   artifacts:
     paths:
       - "**/target/spotbugsXml.xml"
