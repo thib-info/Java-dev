@@ -28,10 +28,10 @@ class DaoFactoryMemTest {
 	    
 	    @Test
 	    void getSystemTest() {
-	        SystemDao sut = this.factory.getSystemsStore().getStore().get(0);
+	        SystemDao sut = this.factory.getSystemsStore().getItem((long)0);
 	        SystemDao sutTest = new SystemDaoMem("BRAS ROBOTIQUE", "Un bras permetant de se mouvoir dans l'espace", 0);
 	        
-	        assertEquals(this.factory.getSystemsStore().getStore().get(0).getClass(), sutTest.getClass());
+	        assertEquals(this.factory.getSystemsStore().getItem((long)0).getClass(), sutTest.getClass());
 	        assertEquals(sut.getTitle(), sutTest.getTitle());
 	        assertEquals(sut.getDescription(), sutTest.getDescription());
 	        assertEquals(sut.getId(), sutTest.getId());

@@ -16,10 +16,10 @@ public class SystemUnitController {
 	public DaoFactory factory;
 
 	@RequestMapping(value="/system")
-	public ModelAndView systemUnitPresentation(@RequestParam(required=false, defaultValue="0") int idSys) {
+	public ModelAndView systemUnitPresentation(@RequestParam(required=false, defaultValue="0") long idSys) {
 		ModelAndView ret = new ModelAndView("systemUnitPresentation");
 		
-		SystemDao sus = this.factory.getSystemsStore().getStore().get(idSys);
+		SystemDao sus = this.factory.getSystemsStore().getItem(idSys);
 		ret.addObject("title", sus.getTitle());
 		ret.addObject("description", sus.getDescription());
 		ret.addObject("id", sus.getId());

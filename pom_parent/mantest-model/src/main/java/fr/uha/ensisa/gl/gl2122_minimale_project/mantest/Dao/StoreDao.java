@@ -7,5 +7,7 @@ public interface StoreDao<T> {
     public void remove(T obj);
     public T find(T obj);
     public int count();
+    public long maxId();
     public List<T> getStore();
+    public T getItem(long id);
 }

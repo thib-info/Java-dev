@@ -23,9 +23,7 @@ class SystemUnitControllerTest {
 	@Mock DaoFactory daoFactory;
 	@Mock SystemDao system;
 	@Mock StoreDao<SystemDao> storeSystem;
-	@Mock List<SystemDao> listSystem;
 	@Mock StoreDao<TestDao> storeTest;
-	@Mock List<TestDao> listTest;
 	public SystemUnitController sut;
 	
 	
@@ -33,8 +31,7 @@ class SystemUnitControllerTest {
 	public void prepareDao() {
 		MockitoAnnotations.openMocks(this);
 		when(daoFactory.getSystemsStore()).thenReturn(this.storeSystem);
-		when(daoFactory.getSystemsStore().getStore()).thenReturn(this.listSystem);
-		when(daoFactory.getSystemsStore().getStore().get(0)).thenReturn(this.system);
+		when(daoFactory.getSystemsStore().getItem((long)0)).thenReturn(this.system);
 		sut = new SystemUnitController();
 		sut.factory = this.daoFactory;
 	}
@@ -49,7 +46,6 @@ class SystemUnitControllerTest {
 	@BeforeEach
 	public void initTestList() {
 		when(this.system.getStoreTest()).thenReturn(storeTest);
-		when(this.storeTest.getStore()).thenReturn(listTest);
 	}
 	
 	@Test
@@ -58,7 +54,7 @@ class SystemUnitControllerTest {
 		assertEquals(system.getDescription(), "Default description");
 		assertEquals(system.getId(), 0);
 		
-		assertEquals(this.system, this.daoFactory.getSystemsStore().getStore().get(0));
+		assertEquals(this.system, this.daoFactory.getSystemsStore().getItem((long)0));
 	}
 
 	@Test

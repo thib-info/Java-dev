@@ -38,9 +38,7 @@ public class TestDetailModificationControllerTest {
 	@Mock DaoFactory daoFactory;
 	@Mock SystemDao system;
 	@Mock StoreDao<SystemDao> storeSystem;
-	@Mock List<SystemDao> listSystem;
 	@Mock StoreDao<TestDao> storeTest;
-	@Mock List<TestDao> listTest;
 	@Mock TestDao testDao;
 
 
@@ -62,8 +60,7 @@ public class TestDetailModificationControllerTest {
 		this.id = 0;
 		
 		when(daoFactory.getSystemsStore()).thenReturn(this.storeSystem);
-		when(daoFactory.getSystemsStore().getStore()).thenReturn(this.listSystem);
-		when(daoFactory.getSystemsStore().getStore().get(0)).thenReturn(this.system);
+		when(daoFactory.getSystemsStore().getItem((long)0)).thenReturn(this.system);
 		
 		
 		sut = new TestDetailModificationController();
@@ -74,10 +71,9 @@ public class TestDetailModificationControllerTest {
 		when(system.getDescription()).thenReturn("A mockito system");
 		
 		when(this.system.getStoreTest()).thenReturn(storeTest);
-		when(this.storeTest.getStore()).thenReturn(listTest);
+		when(this.storeTest.getItem(id)).thenReturn(testDao);
 		
-		
-		when(listTest.get((int)id)).thenReturn(testDao);
+	
 		
 		new_title = "new_title";
 		new_desc = "new_description";
