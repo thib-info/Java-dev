@@ -41,29 +41,8 @@ public class StoreDaoMem<T> implements StoreDao<T> {
 	@Override
 	public List<ModelDao> getStore(){
 		return  this.store;
-<<<<<<< HEAD
 	}
 	
-	@Override
-	public T getItem(long id) {
-		for (ModelDao obj : getStore()) {
-			if (obj.getId() == id) return (T)obj;
-		}
-		return null;
-	}
-
-	@Override
-	public long maxId() {
-		long id_t = 0;
-		for (ModelDao obj : getStore()) {
-			if (id_t < obj.getId()) {
-				id_t = obj.getId();
-			}
-		}
-		return id_t;
-=======
->>>>>>> cdf5f3b (correction du StoreDao, et de StoreDaoMem, et de leurs tests)
-	}
 	
 	@Override
 	public T getItem(long id) {
