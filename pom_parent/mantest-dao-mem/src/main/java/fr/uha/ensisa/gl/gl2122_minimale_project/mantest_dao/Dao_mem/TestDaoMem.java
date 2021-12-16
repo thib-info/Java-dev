@@ -57,5 +57,17 @@ public class TestDaoMem implements TestDao {
 	public TestResultDao getResult() {
 		return this.result;
 	}
+
+	@Override
+	public void setTitle(String title) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

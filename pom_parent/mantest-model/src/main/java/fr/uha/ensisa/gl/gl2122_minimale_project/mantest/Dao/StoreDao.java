@@ -8,6 +8,6 @@ public interface StoreDao<T> {
     public T find(T obj);
     public int count();
     public long maxId();
-    public List<T> getStore();
+    public List<ModelDao> getStore();
     public T getItem(long id);
 }
