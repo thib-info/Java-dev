@@ -17,9 +17,9 @@ public class RemoveTestController {
 	
 	@ResponseBody
 	@RequestMapping(value="/removeTest")
-	public void removeTest(@RequestParam(required=true) int idSystem, @RequestParam(required=true) int idTest) {
-		SystemDao sus = this.factory.getSystemsStore().getStore().get(idSystem);
-		TestDao currentTest = (TestDao) sus.getStoreTest().getStore().get(idTest);
+	public void removeTest(@RequestParam(required=true) int idSystem, @RequestParam(required=true) long idTest) {
+		SystemDao sus = this.factory.getSystemsStore().getItem(idSystem);
+		TestDao currentTest = (TestDao) sus.getStoreTest().getItem(idTest);
 		sus.getStoreTest().remove(currentTest);
 	}
 }

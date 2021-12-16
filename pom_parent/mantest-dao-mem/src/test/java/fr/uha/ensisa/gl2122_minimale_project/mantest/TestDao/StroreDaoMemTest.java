@@ -22,17 +22,20 @@ class StroreDaoMemTest {
 
 	@Test
 	void removeTest() {
-		this.store.save(1);
-		this.store.save(5);
-		this.store.save(3);
+		TestDao test1 = new TestDaoMem("alerte", "one alert", 3);
+		TestDao test2 = new TestDaoMem("alerte", "one alert", 4);
+		TestDao test3 = new TestDaoMem("alerte", "one alert", 5);
 		
+		store.save(test1);
+		store.save(test2);
+		store.save(test3);
 		assertEquals(this.store.count(), 3);
 		
-		this.store.remove(5);
+		this.store.remove(test3);
 		
 		assertEquals(this.store.count(), 2);
-		assertTrue(this.store.getStore().get(0) == (Object) 1);
-		assertTrue(this.store.getStore().get(1) == (Object) 3);
+		assertTrue(this.store.getItem((long)3) == test1);
+		assertTrue(this.store.getItem((long)4) == test2);
 	}
 	
 	@Test
@@ -45,5 +48,39 @@ class StroreDaoMemTest {
 		assertEquals(this.store.find(test2), test2);
 		assertEquals(this.store.find(test1), null);
 	}
+	
+	
+	@Test
+	void testGetItem() {
+		TestDao test1 = new TestDaoMem("alerte", "one alert", 3);
+		TestDao test2 = new TestDaoMem("alerte", "one alert", 4);
+		TestDao test3 = new TestDaoMem("alerte", "one alert", 5);
+		
+		store.save(test1);
+		store.save(test2);
+		store.save(test3);
+		
+		this.store.getItem(test1.getId());
+		
+		assertEquals(this.store.getItem(test1.getId()), test1);
+		assertEquals(this.store.getItem(test2.getId()), test2);
+		assertEquals(this.store.getItem(test3.getId()), test3);
+		assertEquals(this.store.getItem((long) 9), null);
+	}
+	
+	@Test
+	void testMaxId() {
+		TestDao test1 = new TestDaoMem("alerte", "one alert", 9);
+		TestDao test2 = new TestDaoMem("alerte", "one alert", 4);
+		TestDao test3 = new TestDaoMem("alerte", "one alert", 5);
+		
+		store.save(test1);
+		store.save(test2);
+		store.save(test3);
+		
+		assertEquals(this.store.maxId(), (long) 9);
+	}
+	
+	
 
 }

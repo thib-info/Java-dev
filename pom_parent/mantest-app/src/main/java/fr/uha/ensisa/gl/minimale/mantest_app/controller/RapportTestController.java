@@ -21,8 +21,8 @@ public class RapportTestController {
 	public ModelAndView rapportTestPresentation(@RequestParam(required=true) long idSystem, @RequestParam(required=true) long idTest) {
 		ModelAndView ret = new ModelAndView("rapportTestPresentation");
 		
-		SystemDao sut = this.factory.getSystemsStore().getStore().get((int) idSystem);
-		TestDao test = (TestDao) sut.getStoreTest().getStore().get((int) idTest);
+		SystemDao sut = this.factory.getSystemsStore().getItem(idSystem);
+		TestDao test = (TestDao) sut.getStoreTest().getItem(idTest);
 		
 		ret.addObject("test", test);
 		ret.addObject("result", test.getResult());

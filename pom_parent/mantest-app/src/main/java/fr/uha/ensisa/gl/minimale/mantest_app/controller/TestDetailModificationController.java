@@ -23,8 +23,8 @@ public class TestDetailModificationController {
 		ModelAndView ret = new ModelAndView("testUnitPresentation");
 		
 		
-		SystemDao syst = this.factory.getSystemsStore().getStore().get((int) idSystem);
-		TestDao tus = syst.getStoreTest().getStore().get((int) idTest);
+		SystemDao syst = this.factory.getSystemsStore().getItem(idSystem);
+		TestDao tus = syst.getStoreTest().getItem( idTest);
 		
 		if (titleTest != "" && descriptionTest != "") {
 			tus.setName(titleTest);

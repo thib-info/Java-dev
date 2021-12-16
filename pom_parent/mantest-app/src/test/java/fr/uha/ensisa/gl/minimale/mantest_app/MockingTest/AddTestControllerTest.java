@@ -27,9 +27,7 @@ class AddTestControllerTest {
 	@Mock DaoFactory daoFactory;
 	@Mock SystemDao system;
 	@Mock StoreDao<SystemDao> storeSystem;
-	@Mock List<SystemDao> listSystem;
 	@Mock StoreDao<TestDao> storeTest;
-	@Mock List<TestDao> listTest;
 	public AddTestController sut;
 	String titleTest;
 
@@ -42,8 +40,7 @@ class AddTestControllerTest {
 	@BeforeEach
 	public void initSystems() {
 		when(daoFactory.getSystemsStore()).thenReturn(this.storeSystem);
-		when(daoFactory.getSystemsStore().getStore()).thenReturn(this.listSystem);
-		when(daoFactory.getSystemsStore().getStore().get(0)).thenReturn(this.system);
+		when(daoFactory.getSystemsStore().getItem((long)0)).thenReturn(this.system);
 	}
 
 	@BeforeEach

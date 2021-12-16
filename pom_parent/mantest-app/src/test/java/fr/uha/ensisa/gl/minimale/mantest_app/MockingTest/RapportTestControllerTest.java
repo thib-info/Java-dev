@@ -25,9 +25,7 @@ class RapportTestControllerTest {
 	@Mock DaoFactory daoFactory;
 	@Mock SystemDao system;
 	@Mock StoreDao<SystemDao> storeSystem;
-	@Mock List<SystemDao> listSystem;
 	@Mock StoreDao<TestDao> storeTest;
-	@Mock List<TestDao> listTest;
 	@Mock TestDao test;
 	@Mock TestResultDao resTest;
 	public RapportTestController sut;
@@ -40,15 +38,13 @@ class RapportTestControllerTest {
 	@BeforeEach
 	public void initSystems() {		
 		when(daoFactory.getSystemsStore()).thenReturn(this.storeSystem);
-		when(daoFactory.getSystemsStore().getStore()).thenReturn(this.listSystem);
-		when(daoFactory.getSystemsStore().getStore().get(0)).thenReturn(this.system);
+		when(daoFactory.getSystemsStore().getItem((long)0)).thenReturn(this.system);
 	}
 	
 	@BeforeEach
 	public void initTest() {
 		when(this.system.getStoreTest()).thenReturn(storeTest);
-		when(this.storeTest.getStore()).thenReturn(listTest);
-		when(this.listTest.get(0)).thenReturn(test);
+		when(this.storeTest.getItem((long)0)).thenReturn(test);
 		when(this.test.getResult()).thenReturn(resTest);
 	}
 	

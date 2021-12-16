@@ -21,9 +21,9 @@ public class AddTestController {
 	@ResponseBody
 	@RequestMapping(value="/addTest")
 	public void addTest(@RequestParam(required=true) long idSystem, @RequestParam(required=true) String titleTest, @RequestParam(required=true) String descriptionTest) {
-		SystemDao sus = this.factory.getSystemsStore().getStore().get((int) idSystem);
-		int idNewTest = sus.getStoreTest().count();
-		TestDao newTest = new TestDaoMem(titleTest, descriptionTest, idNewTest);
+		SystemDao sus = this.factory.getSystemsStore().getItem(idSystem);
+		long idNewTest = sus.getStoreTest().maxId();
+		TestDao newTest = new TestDaoMem(titleTest, descriptionTest, (long)idNewTest);
 		sus.getStoreTest().save(newTest);
 	}
 	
