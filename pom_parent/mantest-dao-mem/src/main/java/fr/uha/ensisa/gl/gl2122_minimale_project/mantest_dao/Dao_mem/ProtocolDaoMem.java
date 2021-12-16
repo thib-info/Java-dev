@@ -9,11 +9,13 @@ public class ProtocolDaoMem extends ModelDaoMem implements ProtocolDao {
 	private String category;
 	private int status;
 	private StoreDao<TestDao> tests;
+	private int nbrTest;
 	
 	public ProtocolDaoMem() {
 		this.category = "Default";
 		this.status = 0;
 		this.tests = new StoreDaoMem<TestDao>();
+		this.nbrTest = 0;
 	}
 	
 	public ProtocolDaoMem(String name, String type) {
@@ -21,21 +23,28 @@ public class ProtocolDaoMem extends ModelDaoMem implements ProtocolDao {
 		this.category = type;
 		this.status = 0;
 		this.tests = new StoreDaoMem<TestDao>();
+		this.nbrTest = 0;
 	}
 	
 	@Override
 	public void addTest(TestDao test) {
 		this.tests.save(test);
+		this.nbrTest++;
 	}
 	
 	@Override
 	public void removeTest(long id) {
 		this.tests.remove(this.tests.getItem(id));
+		this.nbrTest--;
 	}
 	
 	@Override
 	public StoreDao<TestDao> getTests(){
 		return this.tests;
+	}
+	
+	public int getNbrTest() {
+		return this.nbrTest;
 	}
 	
 	@Override

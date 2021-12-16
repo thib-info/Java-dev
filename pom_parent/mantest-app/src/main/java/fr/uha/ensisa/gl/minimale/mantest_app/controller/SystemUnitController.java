@@ -27,6 +27,9 @@ public class SystemUnitController {
 		ret.addObject("nbrTest", sus.getStoreTest().count());
 		ret.addObject("storeTest", sus.getStoreTest().getStore());
 		
+		ret.addObject("storeProtocol", sus.getStoreProtocol().getStore());
+		ret.addObject("nbrProtocols", sus.getStoreProtocol().count());
+		
 		return ret;
 	}
 }

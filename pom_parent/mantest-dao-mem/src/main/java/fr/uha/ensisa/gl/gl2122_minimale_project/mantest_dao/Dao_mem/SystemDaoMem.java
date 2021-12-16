@@ -16,6 +16,7 @@ public class SystemDaoMem extends ModelDaoMem implements SystemDao {
         setId(0);
         
         this.storeTest = new StoreDaoMem<TestDao>();
+        this.storeProtocol = new StoreDaoMem<ProtocolDao>();
     }
     
     public SystemDaoMem(String title, String description, long id) {
@@ -24,6 +25,7 @@ public class SystemDaoMem extends ModelDaoMem implements SystemDao {
         setId(id);
         
         this.storeTest = new StoreDaoMem<TestDao>();
+        this.storeProtocol = new StoreDaoMem<ProtocolDao>();
     }
 
 	@Override

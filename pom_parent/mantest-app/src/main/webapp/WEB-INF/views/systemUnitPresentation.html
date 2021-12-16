@@ -19,6 +19,41 @@
 				</div>
 			</div>
 
+			<div id="container-protocol">
+				<h2>List of the system's protocols</h2>
+
+				<table id="tab-protocols">
+					<thead>
+						<tr>
+							<td>Id</td>
+							<td>Nom</td>
+							<td>Catégorie</td>
+							<td>Nombre de tests</td>
+							<td>Status</td>
+							<td>Supprimer</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="protocol: ${storeProtocol}" th:id="${'protocol_' + protocol.id}">
+							<td>[[${protocol.id}]]</td>
+							<td>[[${protocol.getTitle()}]]</td>
+							<td>[[${protocol.category}]]</td>
+							<td>[[${protocol.nbrTest}]]</td>
+							<td th:switch="${protocol.status}">
+								<span th:case="'0'">Pas encore effectué</span>
+								<span th:case="'1'">Effectué avec succès</span>
+								<span th:case="'2'">Echoué lors de l'execution</span>
+							</td>
+							<td class="delete-test"><img src="../resources/medias/cross.png" th:src="@{/resources/medias/cross.png}" border=5 height=35 width=35></td>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="6">Number of protocols: [[${nbrProtocols}]]</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
 			<div id="container-test">
 				<h2>List of the system's tests</h2>
 				<table id="tab-tests">

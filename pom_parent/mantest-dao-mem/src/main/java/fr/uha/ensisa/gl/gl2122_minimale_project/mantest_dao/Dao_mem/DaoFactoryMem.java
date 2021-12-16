@@ -34,7 +34,7 @@ public class DaoFactoryMem implements DaoFactory {
         
         SystemDao sut = new SystemDaoMem(title, description, id);
         this.initTest(sut);
-        
+        this.initProtocol(sut);
         this.systemStore.save(sut);
     }
 
@@ -48,13 +48,11 @@ public class DaoFactoryMem implements DaoFactory {
 	}
 	
 	@Override
-	public void initProtocol() {
+	public void initProtocol(SystemDao sut) {
 		TestDao turnOnPowerTest = new TestDaoMem("Turn On Power", "Check if the power is enable", 2);
 		ProtocolDao protocol = new ProtocolDaoMem("Tests électriques", "Electronique");
 		protocol.addTest(turnOnPowerTest);
-		
-		SystemDao sys = (SystemDao) this.systemStore.getStore().get(0);
-		sys.getStoreProtocol().save(protocol);
+		sut.getStoreProtocol().save(protocol);
 	}
     
 }
