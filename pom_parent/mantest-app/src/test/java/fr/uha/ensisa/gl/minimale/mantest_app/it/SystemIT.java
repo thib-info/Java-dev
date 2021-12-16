@@ -11,6 +11,8 @@ class SystemIT{
 	@BeforeAll
 	public static void setUp() {
 		InitConnexion.setupWebDriver();
+		String baseUrl = InitConnexion.getBaseUrl();
+		InitConnexion.driver.get(baseUrl + "system");
 	}
 	
 	@AfterAll
@@ -20,10 +22,22 @@ class SystemIT{
 	}
 
 	@Test
-	void urlTest() {
-		String baseUrl = InitConnexion.getBaseUrl();
-		InitConnexion.driver.get(baseUrl + "system");
-		assertTrue(InitConnexion.driver.getPageSource().contains("container"), "Success Tests");
+	void testPresentation() {
+		assertTrue(InitConnexion.driver.getPageSource().contains("tab-tests"), "Some tests are implemented");
 	}
+	
+	@Test
+	void systemCaracteristics() {
+		assertTrue(InitConnexion.driver.getPageSource().contains("system-description"));
+		assertTrue(InitConnexion.driver.getPageSource().contains("caracteristic-sys"));
+		assertTrue(InitConnexion.driver.getPageSource().contains("id-systeme"));
+		assertTrue(InitConnexion.driver.getPageSource().contains("system-image-container"));
+	}
+	
+	@Test
+	void creationNewTest() {
+		assertTrue(InitConnexion.driver.getPageSource().contains("addNewTest"));
+	}
+	
 
 }

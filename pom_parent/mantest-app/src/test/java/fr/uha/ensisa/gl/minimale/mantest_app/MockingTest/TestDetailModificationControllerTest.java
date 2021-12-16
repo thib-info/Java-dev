@@ -5,15 +5,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.DaoFactory;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -25,9 +22,6 @@ import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.DaoFactory;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.StoreDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.SystemDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao;
-import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.DaoFactoryMem;
-import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.StoreDaoMem;
-import fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem.SystemDaoMem;
 import fr.uha.ensisa.gl.minimale.mantest_app.controller.TestDetailModificationController;
 
 
