@@ -1,5 +1,6 @@
 package fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem;
 
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.ProtocolDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.StoreDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.SystemDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao;
@@ -7,6 +8,7 @@ import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao;
 public class SystemDaoMem extends ModelDaoMem implements SystemDao {
 
 	private StoreDao<TestDao> storeTest;
+	private StoreDao<ProtocolDao> storeProtocol;
 	
     public SystemDaoMem(){
         setTitle("DefaultSystem");
@@ -27,6 +29,11 @@ public class SystemDaoMem extends ModelDaoMem implements SystemDao {
 	@Override
 	public StoreDao<TestDao> getStoreTest() {
 		return this.storeTest;
+	}
+	
+	@Override
+	public StoreDao<ProtocolDao> getStoreProtocol(){
+		return this.storeProtocol;
 	}
 
 }

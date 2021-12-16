@@ -2,6 +2,7 @@ package fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem;
 
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.DaoFactory;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.ModelDao;
+import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.ProtocolDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.StoreDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.SystemDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao;
@@ -44,6 +45,16 @@ public class DaoFactoryMem implements DaoFactory {
 		
 		sut.getStoreTest().save(moveTest);
 		sut.getStoreTest().save(stopTest);
+	}
+	
+	@Override
+	public void initProtocol() {
+		TestDao turnOnPowerTest = new TestDaoMem("Turn On Power", "Check if the power is enable", 2);
+		ProtocolDao protocol = new ProtocolDaoMem("Tests électriques", "Electronique");
+		protocol.addTest(turnOnPowerTest);
+		
+		SystemDao sys = (SystemDao) this.systemStore.getStore().get(0);
+		sys.getStoreProtocol().save(protocol);
 	}
     
 }

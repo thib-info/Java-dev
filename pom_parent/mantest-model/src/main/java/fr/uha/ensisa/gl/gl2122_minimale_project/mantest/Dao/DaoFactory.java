@@ -6,4 +6,5 @@ public interface DaoFactory {
     
     public void initTest(SystemDao sut);
     public void initSystem();
+    public void initProtocol();
 }
