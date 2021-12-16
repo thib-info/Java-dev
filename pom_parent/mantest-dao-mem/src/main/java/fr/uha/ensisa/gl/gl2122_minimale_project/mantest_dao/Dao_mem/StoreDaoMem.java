@@ -62,4 +62,21 @@ public class StoreDaoMem<T> implements StoreDao<T> {
 		return id_t;
 	}
 	
+	@Override
+	public T getItem(long id) {
+		for (T obj : getStore()) {
+			if (((ModelDaoMem)obj).getId() == id) return obj;
+		}
+		return null;
+	}
+
+	@Override
+	public long maxId() {
+		long id_t = 0;
+		for (T obj : getStore()) {
+			if (id_t < ((ModelDaoMem)obj).getId() ) id_t = ((ModelDaoMem)obj).getId();
+		}
+		return id_t;
+	}
+	
 }
