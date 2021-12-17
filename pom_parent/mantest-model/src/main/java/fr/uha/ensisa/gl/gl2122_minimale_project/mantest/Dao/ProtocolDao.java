@@ -12,4 +12,6 @@ public interface ProtocolDao extends ModelDao {
 	
 	public void setStatus(int status);
 	public int getStatus();
+	
+	public int getNbrTest();
 }

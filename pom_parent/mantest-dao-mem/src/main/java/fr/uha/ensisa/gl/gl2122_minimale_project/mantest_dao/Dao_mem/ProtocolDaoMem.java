@@ -52,6 +52,7 @@ public class ProtocolDaoMem extends ModelDaoMem implements ProtocolDao {
 		return this.tests;
 	}
 	
+	@Override
 	public int getNbrTest() {
 		return this.nbrTest;
 	}

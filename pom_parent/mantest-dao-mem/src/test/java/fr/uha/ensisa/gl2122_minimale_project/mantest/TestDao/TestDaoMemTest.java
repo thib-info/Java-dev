@@ -44,5 +44,20 @@ class TestDaoMemTest {
 		TestDao newTest = new TestDaoMem("jump", "move from the floor", 10);
 		assertEquals(newTest.getResult().getClass(), new TestResultDaoMem().getClass());
 	}
+	
+	@Test
+	void getTitleTest() {
+		this.test.setTitle("test");
+		String title = this.test.getTitle();
+		assertTrue(title != null);
+		assertTrue(title.getClass().getName() == title.getClass().getName());
+	}
+	
+	@Test
+	void setTitleTest() {
+		String newTitle = "NewTit";
+		this.test.setTitle(newTitle);
+		assertEquals(this.test.getTitle(), newTitle);
+	}
 
 }

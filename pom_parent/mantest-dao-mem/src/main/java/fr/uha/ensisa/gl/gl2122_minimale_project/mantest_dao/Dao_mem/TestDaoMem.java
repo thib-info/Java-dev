@@ -3,7 +3,7 @@ package fr.uha.ensisa.gl.gl2122_minimale_project.mantest_dao.Dao_mem;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestDao;
 import fr.uha.ensisa.gl.gl2122_minimale_project.mantest.Dao.TestResultDao;
 
-public class TestDaoMem implements TestDao {
+public class TestDaoMem extends ModelDaoMem implements TestDao {
 	private String name;
 	private String description;
 	private long id;
@@ -56,18 +56,6 @@ public class TestDaoMem implements TestDao {
 	
 	public TestResultDao getResult() {
 		return this.result;
-	}
-
-	@Override
-	public void setTitle(String title) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getTitle() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 }
