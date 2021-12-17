@@ -20,6 +20,10 @@ function reactAjax(index, response){
         case 1: // Remove test
             reloadPage();
             break;
+        case 2: // Ask tests of a protocol
+            console.log(response);
+            listTestsProtocol(response);
+            break;
         default:
             break;
     }
@@ -27,4 +31,19 @@ function reactAjax(index, response){
 
 function reloadPage(){
     window.location = document.location.href;
+}
+
+function listTestsProtocol(jsonTests){
+    jsonTests = JSON.parse(jsonTests);
+    console.log(jsonTests);
+    var HTMLString = "<table id='tab-protocol-test'>\
+    <thead><tr><td>Nom</td><td>Description</td><td>Status</td></tr></thead>\
+    <tbody>";
+    for(var i=0; i<jsonTests.store.length; i++){
+        HTMLString += "<tr><td>" + jsonTests.store[i].name + "</td><td>" + jsonTests.store[i].description + "</td><td>" + jsonTests.store[i].result.status + "</td></tr>";
+    }
+    HTMLString += "</tbody></table>";
+    
+    var container = document.getElementById("container-protocol-test");
+    container.insertAdjacentHTML('beforeend', HTMLString);
 }

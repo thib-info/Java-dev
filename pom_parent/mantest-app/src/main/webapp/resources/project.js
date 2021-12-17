@@ -3,6 +3,32 @@ window.onload = function(){
 	listenerRapport();
   listenerNewTest();
   listenerDelete();
+  listenerProtocol();
+}
+
+function listenerProtocol(){
+  var tableProt = document.getElementById("tab-protocols").children[1];
+
+  for(var i=0; i<tableProt.children.length; i++){
+    tableProt.children[i].addEventListener('click', function(sender){
+      getElementsProtocols(sender);
+    });
+  }
+}
+
+function getElementsProtocols(sender){
+  var idS = document.getElementById('id-systeme').innerText.split(': ')[1];
+  var protocol = sender.originalTarget.parentElement.id.split('_')[1];
+
+  var nameProtocol = sender.originalTarget.parentElement.children[1].innerText;
+  var titleProtcol = document.getElementById("name-protocol-test");
+  titleProtcol.innerText = nameProtocol;
+
+  var container = document.getElementById("container-protocol-test");
+  container.style = "";
+
+  var valueToSend = "idSystem=" + idS + "&idProtocol=" + protocol;
+  ajaxSend(valueToSend, "/getProtocolTests", 2);
 }
 
 function listenerDelete(){
