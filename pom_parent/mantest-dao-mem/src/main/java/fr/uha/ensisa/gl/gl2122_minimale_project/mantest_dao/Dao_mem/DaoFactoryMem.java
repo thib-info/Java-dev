@@ -54,6 +54,10 @@ public class DaoFactoryMem implements DaoFactory {
 		ProtocolDao protocol = new ProtocolDaoMem("Tests électriques", "Electronique");
 		protocol.addTest(turnOnPowerTest);
 		protocol.addTest(turnOffPowerTest);
+		
+		sut.getStoreTest().save(turnOffPowerTest);
+		sut.getStoreTest().save(turnOnPowerTest);
+		
 		sut.getStoreProtocol().save(protocol);
 	}
     

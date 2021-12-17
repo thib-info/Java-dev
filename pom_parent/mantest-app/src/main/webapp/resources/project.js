@@ -23,7 +23,6 @@ function deleteProtocol(sender){
   var idProt = sender.originalTarget.parentElement.parentElement.id.split('_')[1];
   var idS = document.getElementById('id-systeme').innerText.split(': ')[1];
   var valueToSend = "idSystem=" + idS + "&idProtocol=" + idProt;
-  console.log("ASked to kill");
   ajaxSend(valueToSend, "/removeProtocol", 0);
 }
 
@@ -92,6 +91,7 @@ function getElementsProtocols(sender){
 
   var valueToSend = "idSystem=" + idS + "&idProtocol=" + protocol;
   ajaxSend(valueToSend, "/getProtocolTests", 2);
+  ajaxSend(valueToSend, "/getAllTestsSystem", 10);
 }
 
 function listenerDelete(){
