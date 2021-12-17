@@ -50,8 +50,10 @@ public class DaoFactoryMem implements DaoFactory {
 	@Override
 	public void initProtocol(SystemDao sut) {
 		TestDao turnOnPowerTest = new TestDaoMem("Turn On Power", "Check if the power is enable", 2);
+		TestDao turnOffPowerTest = new TestDaoMem("Turn Off Power", "Check if the power can be disable", 3);
 		ProtocolDao protocol = new ProtocolDaoMem("Tests électriques", "Electronique");
 		protocol.addTest(turnOnPowerTest);
+		protocol.addTest(turnOffPowerTest);
 		sut.getStoreProtocol().save(protocol);
 	}
     
