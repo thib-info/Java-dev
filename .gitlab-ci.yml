@@ -47,14 +47,6 @@ test:
       junit:
         - "**/target/surefire-reports/TEST-*.xml"
 
-spotbugs:
-  stage: test
-  script:
-    - mvn $MAVEN_CLI_OPTS verify spotbugs:check
-  artifacts:
-    paths:
-      - "**/target/spotbugsXml.xml"
-
 integration-test:
   stage: integration-test
   services:
