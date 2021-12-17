@@ -22,7 +22,7 @@ public class AddTestController {
 	@RequestMapping(value="/addTest")
 	public void addTest(@RequestParam(required=true) long idSystem, @RequestParam(required=true) String titleTest, @RequestParam(required=true) String descriptionTest) {
 		SystemDao sus = this.factory.getSystemsStore().getItem(idSystem);
-		long idNewTest = sus.getStoreTest().maxId();
+		long idNewTest = sus.getStoreTest().maxId() + 1;
 		TestDao newTest = new TestDaoMem(titleTest, descriptionTest, (long)idNewTest);
 		sus.getStoreTest().save(newTest);
 	}

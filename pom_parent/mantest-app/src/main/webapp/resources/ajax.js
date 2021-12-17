@@ -37,7 +37,6 @@ function reloadPage(){
 
 function listTestsProtocol(jsonTests){
     jsonTests = JSON.parse(jsonTests);
-    console.log(jsonTests);
     var HTMLString = "<table id='tab-protocol-test'>\
     <thead><tr><td>Nom</td><td>Description</td><td>Status</td></tr></thead>\
     <tbody>";

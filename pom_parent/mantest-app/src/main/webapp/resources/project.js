@@ -5,6 +5,26 @@ window.onload = function(){
   listenerDelete();
   listenerProtocol();
   listenerNewProtocol();
+  listenerDeleteProtocol();
+}
+
+function listenerDeleteProtocol(){
+  var cross = document.getElementsByClassName("delete-protocol");
+
+  for(var i=0; i<cross.length; i++){
+    cross[i].addEventListener('click', function(sender){
+      console.log("test");
+      deleteProtocol(sender);
+    });
+  }
+}
+
+function deleteProtocol(sender){
+  var idProt = sender.originalTarget.parentElement.parentElement.id.split('_')[1];
+  var idS = document.getElementById('id-systeme').innerText.split(': ')[1];
+  var valueToSend = "idSystem=" + idS + "&idProtocol=" + idProt;
+  console.log("ASked to kill");
+  ajaxSend(valueToSend, "/removeProtocol", 0);
 }
 
 function listenerNewProtocol(){
@@ -56,6 +76,10 @@ function listenerProtocol(){
 }
 
 function getElementsProtocols(sender){
+  if(sender.originalTarget.parentElement.className === "delete-protocol")
+    return;
+
+  console.log(sender.originalTarget.parentElement.parentElement.className);
   var idS = document.getElementById('id-systeme').innerText.split(': ')[1];
   var protocol = sender.originalTarget.parentElement.id.split('_')[1];
 
