@@ -26,6 +26,15 @@ public class ProtocolDaoMem extends ModelDaoMem implements ProtocolDao {
 		this.nbrTest = 0;
 	}
 	
+	public ProtocolDaoMem(String titleProtocol, String descriptionProtocol, long idNewProtocol) {
+		this.setTitle(titleProtocol);
+		this.category = descriptionProtocol;
+		this.status = 0;
+		this.tests = new StoreDaoMem<TestDao>();
+		this.nbrTest = 0;
+		this.setId(idNewProtocol);
+	}
+
 	@Override
 	public void addTest(TestDao test) {
 		this.tests.save(test);

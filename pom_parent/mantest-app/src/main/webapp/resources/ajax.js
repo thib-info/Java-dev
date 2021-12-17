@@ -21,8 +21,10 @@ function reactAjax(index, response){
             reloadPage();
             break;
         case 2: // Ask tests of a protocol
-            console.log(response);
             listTestsProtocol(response);
+            break;
+        case 3: // Create New Protocol
+            reloadPage();
             break;
         default:
             break;
@@ -43,7 +45,7 @@ function listTestsProtocol(jsonTests){
         HTMLString += "<tr><td>" + jsonTests.store[i].name + "</td><td>" + jsonTests.store[i].description + "</td><td>" + jsonTests.store[i].result.status + "</td></tr>";
     }
     HTMLString += "</tbody></table>";
-    
+
     var container = document.getElementById("container-protocol-test");
     container.insertAdjacentHTML('beforeend', HTMLString);
 }

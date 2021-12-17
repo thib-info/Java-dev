@@ -52,6 +52,21 @@
 						</tr>
 					</tfoot>
 				</table>
+				<button id="addNewProtocol" class="btn-grad btn-grad-val"> Ajouter un nouveaux protocole au système </button>
+			</div>
+
+			<div id="container-new-protocol" style="display: none;">
+				<h2>Ajout d'un nouveau Protocole</h2>
+				<div>
+					<label>Nom du protocole: </label><input type="text" id="input-new-protocole-name" name="protocole-name" placeholder="Entrez votre nom">
+				</div>
+				<div>
+					<label>Catégorie du protocole: </label><input type="text" id="input-new-protocole-description" name="protocole-description" placeholder="Entrez votre description">
+				</div>
+				<div class="container-button-add">
+					<button id="confirm-new-protocole" class="btn-grad btn-grad-val">Confirmer</button>
+					<button id="cancel-new-protocole" class="btn-grad btn-grad-cancel">Annuler</button>
+				</div>
 			</div>
 
 			<div id="container-protocol-test" style="display: none;">

@@ -4,6 +4,45 @@ window.onload = function(){
   listenerNewTest();
   listenerDelete();
   listenerProtocol();
+  listenerNewProtocol();
+}
+
+function listenerNewProtocol(){
+  var button = document.getElementById("addNewProtocol");
+  button.addEventListener('click', function(){
+    createNewProtocol();
+  });
+}
+
+function createNewProtocol(){
+  var container = document.getElementById("container-new-protocol");
+  container.style = "";
+  
+  var buttonConfirm = document.getElementById("confirm-new-protocole");
+  buttonConfirm.addEventListener('click', function(){createNewProtocoleSend();});
+  
+  var buttonCancel = document.getElementById("cancel-new-protocole");
+  buttonCancel.addEventListener('clcik', function(){cancelNewProtocol();});
+}
+
+function createNewProtocoleSend(){
+  var name = document.getElementById("input-new-protocole-name").value;
+  var description = document.getElementById("input-new-protocole-description").value;
+  var idS = document.getElementById('id-systeme').innerText.split(': ')[1];
+
+  if(name != '' && description != ''){
+    var valueToSend = "idSystem=" + idS + "&titleProtocol=" + name + "&descriptionProtocol=" + description;
+    var path = "/addProtocol";
+    ajaxSend(valueToSend, path, 3);
+  }
+
+}
+
+function cancelNewProtocol(){
+  var container = document.getElementById("container-new-protocol");
+  container.style = "display: none";
+  var name = document.getElementById("input-new-protocole-name").value = "";
+  var description = document.getElementById("input-new-protocole-description").value = "";
 }
 
 function listenerProtocol(){

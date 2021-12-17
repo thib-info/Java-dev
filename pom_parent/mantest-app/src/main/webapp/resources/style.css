@@ -114,3 +114,7 @@ td {
 #container-protocol{
 	margin-top:  3%;
 }
+
+#addNewProtocol{
+	cursor:  pointer;
+}
